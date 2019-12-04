@@ -6,6 +6,16 @@ name: Lint/test check and Trufflehog
     
 steps:
 
+- name : Change github status
+  image: python:2.7-alpine
+  api_key:
+    from_secret: API_KEY
+  commands:
+     - echo $API_KEY
+  when:
+    trigger:
+    - pull_request
+    
 - name : Truffle-hog clone  
   image: docker:git
   commands:    
