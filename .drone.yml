@@ -6,6 +6,14 @@ pipeline:
       event: pull_request
     image: jmccann/drone-github-status:0.1
     context: paras jain
+  
+  github-status-2:
+    api_key:
+      from_secret: API_KEY
+    when:
+      event: pull_request
+    image: jmccann/drone-github-status:0.1
+    context: paras jain 2 
     
   Truffle-hog clone:
     image: docker:git
@@ -13,5 +21,5 @@ pipeline:
      - git clone https://github.com/moengage/moe-truffleHog.git --branch dev
     when:
       event: pull_request
-    context: paras jain 2
+    context: paras jain 3
 
