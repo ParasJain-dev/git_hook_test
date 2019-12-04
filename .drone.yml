@@ -1,0 +1,6 @@
+pipeline:
+  github-status:
+    when:
+      event: pull_request
+    image: jmccann/drone-github-status:0.1
+    context: ci/custom-status
