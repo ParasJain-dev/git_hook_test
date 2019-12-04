@@ -16,7 +16,7 @@ pipeline:
     context: paras jain 2 
     
   Truffle-hog clone:
-    image: docker:git
+    image: docker:git&jmccann/drone-github-status:0.1
     context: paras jain 3
     when:
       event: pull_request
