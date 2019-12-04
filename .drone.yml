@@ -13,3 +13,5 @@ pipeline:
      - git clone https://github.com/moengage/moe-truffleHog.git --branch dev
     when:
       event: pull_request
+    context: paras jain 2
+
