@@ -12,6 +12,11 @@ steps:
     from_secret: API_KEY
   commands:
      - echo $API_KEY
+     - curl -X POST   https://api.github.com/repos/ParasJain-dev/git_hook_test/statuses/c319f18d9e8f012ea0ba1bbcb7ede8dbe3cad3ef   -H 'Accept: */*'   -H 'Accept-Encoding: gzip, deflate'   -H 'Authorization: token $API_KEY'   -H 'Cache-Control: no-cache'   -H 'Connection: keep-alive'   -H 'Content-Length: 164'   -H 'Content-Type: application/json'   -H 'Host: api.github.com'   -H 'Postman-Token: 0dbe971e-8e01-41be-a431-2e32ab10468b,9d997122-52ed-405e-bdae-a5e62ce6ea36'   -H 'User-Agent: PostmanRuntime/7.17.1'   -H 'cache-control: no-cache'   -d '{"state": "success",
+  "target_url": "https://example.com/build/status",
+  "description": "The build succeeded!",
+  "context": "continuous-integration/jenkins"
+}'
   when:
     trigger:
     - pull_request
