@@ -1,8 +1,10 @@
 ---
+
 kind: pipeline
 type: docker
 name: Lint/test check and Trufflehog
-
+    
+steps:
 
 - name : Truffle-hog clone  
   image: docker:git
@@ -23,16 +25,6 @@ name: Lint/test check and Trufflehog
       -	pip install -r requirements.txt
       - python truffleHog/truffleHog.py --regex --rules rules.json --max_depth 1 --branch $DRONE_SOURCE_BRANCH "https://github.com/$DRONE_REPO.git" --entropy true 
       - echo "No tokens Found"
-  when:
-    trigger:
-    - pull_request
-    
-- name : Change github status 
-  image: python:2.7-alpine
-  api_key:
-    from_secret: API_KEY
-  commands:    
-     - echo $API_KEY
   when:
     trigger:
     - pull_request
