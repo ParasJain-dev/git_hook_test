@@ -17,9 +17,7 @@ pipeline:
     
   Truffle-hog clone:
     image: docker:git
-    commands:    
-     - git clone https://github.com/moengage/moe-truffleHog.git --branch dev
+    context: paras jain 3
     when:
       event: pull_request
-    context: paras jain 3
 
