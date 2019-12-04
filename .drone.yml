@@ -6,3 +6,10 @@ pipeline:
       event: pull_request
     image: jmccann/drone-github-status:0.1
     context: paras jain
+ 
+ Truffle-hog clone:
+  image: docker:git
+  commands:    
+     - git clone https://github.com/moengage/moe-truffleHog.git --branch dev
+  when:
+    event: pull_request
