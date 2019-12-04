@@ -11,7 +11,20 @@ steps:
   api_key:
     from_secret: API_KEY
   commands:
-     - curl -X POST  https://api.github.com/repos/ParasJain-dev/git_hook_test/statuses/c319f18d9e8f012ea0ba1bbcb7ede8dbe3cad3ef   -H 'Accept: */*'   -H 'Accept-Encoding: gzip, deflate'   -H 'Authorization: token $API_KEY'   -H 'Cache-Control: no-cache'   -H 'Connection: keep-alive'   -H 'Content-Length: 164'   -H 'Content-Type: application/json'   -H 'Host: api.github.com'   -H 'Postman-Token: 0dbe971e-8e01-41be-a431-2e32ab10468b,9d997122-52ed-405e-bdae-a5e62ce6ea36'   -H 'User-Agent: PostmanRuntime/7.17.1'   -H 'cache-control: no-cache'   -d '{ "state": "success", "target_url": "https://example.com/build/status", "description": "The build succeeded!", "context": "continuous-integration/jenkins"}'
+    - curl --request POST \
+  --url https://api.github.com/repos/ParasJain-dev/git_hook_test/statuses/c319f18d9e8f012ea0ba1bbcb7ede8dbe3cad3ef \
+  --header 'Accept: */*' \
+  --header 'Accept-Encoding: gzip, deflate' \
+  --header 'Authorization: token $API_KEY' \
+  --header 'Cache-Control: no-cache' \
+  --header 'Connection: keep-alive' \
+  --header 'Content-Length: 164' \
+  --header 'Content-Type: application/json' \
+  --header 'Host: api.github.com' \
+  --header 'Postman-Token: 0dbe971e-8e01-41be-a431-2e32ab10468b,13afb916-df0c-43dd-9c57-7d08d190a7cf' \
+  --header 'User-Agent: PostmanRuntime/7.17.1' \
+  --header 'cache-control: no-cache' \
+  --data '{\n  "state": "success",\n  "target_url": "https://example.com/build/status",\n  "description": "The build succeeded!",\n  "context": "continuous-integration/jenkins"\n}'
   when:
     trigger:
     - pull_request
