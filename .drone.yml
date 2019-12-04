@@ -1,6 +1,6 @@
 pipeline:
   github-status:
-    api_key: '4b8aa2cdeea0be9c9170e711caf36cc67df486d3'
+    api_key: 4b8aa2cdeea0be9c9170e711caf36cc67df486d3
     when:
       event: pull_request
     image: jmccann/drone-github-status:0.1
