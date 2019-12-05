@@ -1,4 +1,5 @@
 pipeline:
+
   github-status:
     api_key:
       from_secret: API_KEY
